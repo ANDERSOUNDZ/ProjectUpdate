@@ -5,10 +5,10 @@ import { AboutPageComponent } from './shared/pages/about-page/about-page.compone
 import { ContactComponent } from './shared/pages/contact/contact.component';
 
 const routes: Routes = [
-  {
-    path:'home',
-    component: HomePageComponent
-  },
+  // {
+  //   path:'home',
+  //   component: HomePageComponent
+  // },
   {
     path:'about',
     component: AboutPageComponent
@@ -17,9 +17,15 @@ const routes: Routes = [
     path:'contact',
     component: ContactComponent
   },
+  //lazyload
+  {
+    path: 'countries',
+    //Definir función de carga
+    loadChildren: () => import('./countries/countries.module').then(m => m.CountriesModule)
+  },
   {
     path:'**',
-    redirectTo: 'home'
+    redirectTo: 'countries/by-capital'
   },
 ];
 
