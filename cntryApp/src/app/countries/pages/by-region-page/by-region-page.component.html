@@ -1,1 +1,16 @@
-<p>by-region-page works!</p>
+<h2>Por Región</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!--Busqueda-->
+    <shared-search-box (onValue)="searchByRegion($event)" placeholder="Buscar por capital"></shared-search-box>
+  </div>
+</div>
+<hr>
+
+<div class="row">
+  <div class="col">
+        <countries-table [countries]="countries"></countries-table>
+  </div>
+</div>

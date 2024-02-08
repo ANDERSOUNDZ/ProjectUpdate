@@ -12,14 +12,11 @@ export class ByCapitalPageComponent {
 
   public countries: Country[] = [];
 
-  constructor (
-    private countryService: CountryService
-  ){
-
+  constructor ( private countryService: CountryService ){
   }
 
   @Output() onValue = new EventEmitter();
-
+  
   searchByCapital( term: string ):void {
     this.countryService.searchCapital(term).subscribe(
       countries => {
